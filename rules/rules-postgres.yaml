@@ -34,7 +34,7 @@
 # Restricting spawned processes to selected set
 
 - list: postgres_allowed_processes
-  items: ["/proc/self/exe", "pg_isready", "postgres", "postgres: autovacuum launcher process   ", "postgres: checkpointer process   ", "postgres: stats collector process   ", "postgres: wal writer process   ", "postgres: writer process   ", "sh"]
+  items: ["/proc/self/exe", "pg_isready", "postgres", "psql", "postgres: autovacuum launcher process", "pg_ctl" , "postgres: checkpointer process   ", "postgres: stats collector process   ", "postgres: wal writer process   ", "postgres: writer process   ", "sh"]
 
 - rule: Unexpected spawned process postgres
   desc: Detect a process started in a postgres container outside of an expected set
@@ -45,7 +45,7 @@
 # Restricting files read or written to specific set
 
 - list: postgres_allowed_file_prefixes_readonly
-  items: ["/dev", "/etc", "/lib/x86_64-linux-gnu", "/usr/lib/locale", "/usr/lib/x86_64-linux-gnu", "/usr/share/locale", "/var/lib/postgresql/data/pgdata"]
+  items: ["/dev", "/etc", "/lib/x86_64-linux-gnu", "/usr/lib/locale", "/usr/lib/x86_64-linux-gnu", "/usr/share/locale", "/var/lib/postgresql/data", "/usr/share/zoneinfo", "/var/lib/postgresql", "/usr/lib/postgresql", "/usr/share/postgresql", "/var/run/postgresql"]
 
 - rule: Unexpected file access readonly for postgres
   desc: Detect an attempt to access a file readonly other than below an expected list of directories
@@ -54,7 +54,7 @@
   priority: NOTICE
 
 - list: postgres_allowed_file_prefixes_readwrite
-  items: ["/var/lib/postgresql/data/pgdata"]
+  items: ["/var/lib/postgresql/data", "/var/run/postgresql"]
 
 - rule: Unexpected file access readwrite for postgres
   desc: Detect an attempt to access a file readwrite other than below an expected list of directories
