@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "extraRules:"
+echo "customRules:"
 for rules_file in "$@"
 do
   echo -e "  $(basename $rules_file): |-"
