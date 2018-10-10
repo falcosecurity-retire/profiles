@@ -1,7 +1,7 @@
 # Falco-extras
 
 
-This repository contains [Sysdig Falco](https://sysdig.com/opensource/falco/) container runtime security extras like security profiles for a growing list of the most popular container images. If you are using any image from the list below, the default ruleset will provide you with an initial set of security whitelists and blacklists (constraints) that you can extend to match your deployment or application specifics. Read more in our announcement blog post: [Implementing Docker/Kubernetes runtime security](https://sysdig.com/blog/docker-runtime-security/).
+This repository contains [Falco](https://falco.org) container runtime security extras like security profiles for a growing list of the most popular container images. If you are using any image from the list below, the default ruleset will provide you with an initial set of security whitelists and blacklists (constraints) that you can extend to match your deployment or application specifics. Read more in our announcement blog post: [Implementing Docker/Kubernetes runtime security](https://sysdig.com/blog/docker-runtime-security/).
 
 ## What kind of unwanted behaviors can Falco detect?
 
