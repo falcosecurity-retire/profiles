@@ -51,7 +51,7 @@ For example, if you want to include the Traefik rules present in this repository
 
 `cp rules/rules-traefik.yaml >> /etc/falco/falco_rules.d/`
 
-If you are deploying Falco as a container, mount the path as an external volume where you can store the configration files or use a Kubernetes configMap. Then, restart he container.
+If you are deploying Falco as a container, mount the path as an external volume where you can store the configration files or use a Kubernetes configMap. Then, restart the container.
 If you are using Falco as a system service, restart the service.
 
 **Note:** Take into account that these rules are based on strict whitelisting, and they have been created using default images. You will need to adapt them to your deployment to avoid false positives. Extend the rules whitelisting the paths your application use in the file system (caches, user data, additional libraries), specify other network activity like additional listing ports or network connections and any other running programs or binary utilities required during the lifecylce of your container (start, run and shutdown). You can read more about the Falco rule syntax in [Getting started writing Falco rules
